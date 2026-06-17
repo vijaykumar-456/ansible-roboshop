@@ -29,24 +29,24 @@
 
   - name: Add or create a R53 Record for frontend
     amazon.aws.route53:
-    state: present
-    zone: "{{ domain_name }}"
-    record: "{{item}}.{{domain_name}}"
-    type: A
-    ttl: 1
-    value: "{{ item.instances[0].private_ip_address }}"
-    overwrite: true
+      state: present
+      zone: "{{ domain_name }}"
+      record: "{{item}}.{{domain_name}}"
+      type: A
+      ttl: 1
+      value: "{{ item.instances[0].private_ip_address }}"
+      overwrite: true
     loop: "{{ ec2_output.results }}"
 
   - name: Add or create a R53 Record for frontend
     amazon.aws.route53:
-    state: present
-    zone: "{{ domain_name }}"
-    record: "{{domain_name}}"
-    type: A
-    ttl: 1
-    value: "{{ item.instances[0].private_ip_address }}"
+      state: present
+      zone: "{{ domain_name }}"
+      record: "{{domain_name}}"
+      type: A
+      ttl: 1
+      value: "{{ item.instances[0].private_ip_address }}"
+      overwrite: true
     loop: "{{ ec2_output.results }}"
-    overwrite: true
     when: item.item == "frontend"
   
