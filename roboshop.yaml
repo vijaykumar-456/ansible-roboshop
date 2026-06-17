@@ -60,7 +60,7 @@
       state: absent
       zone: "{{ domain_name }}"
       record: "{{item}}.{{domain_name}}"
-      type: a
+      type: A
       ttl: 1
     loop: "{{ instance }}"
     when: action == "delete"
@@ -70,7 +70,7 @@
       state: absent
       zone: "{{ domain_name }}"
       record: "{{domain_name}}"
-      type: a
+      type: A
       ttl: 1
     loop: "{{ instance }}"
     when:
