@@ -23,5 +23,5 @@
 
   - name: Create R53 Record
     debug:
-      msg: " Instance Name: {{ item.item }} Private IP: {{ item.instance[0].private_ip_address }}"
+      msg: " Instance Name: {{ item.item }} Private IP: {{ item.instances[0].private_ip_address }}"
     loop: "{{ ec2_output.results}}"
