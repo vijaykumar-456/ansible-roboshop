@@ -18,7 +18,7 @@
       - roboshop-common
     loop: "{{ instance }}"
     register: ec2_output
-    when: action == "create"
+    when: action == create
   
   # - name:
   #   debug:
@@ -39,7 +39,7 @@
       value: "{{ item.instances[0].private_ip_address }}"
       overwrite: true
     loop: "{{ ec2_output.results }}"
-    when: action == "create"
+    when: action == create
 
   - name: Add or create a R53 Record for frontend
     amazon.aws.route53:
