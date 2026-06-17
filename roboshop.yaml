@@ -9,15 +9,15 @@
   tasks:
   - name: Installing roboshop instances
     amazon.aws.ec2_instance:
-      name: " roboshop-{{ item }} "
+      name: "roboshop-{{ item }}"
       instance_type: "{{ instance_type }}"
       image_id: "{{ ami_id }}"
       security_groups:
-      - " roboshop-{{ item }} "
+      - "roboshop-{{ item }}"
       - roboshop-common
-    loop: " {{ instance }} "
+    loop: "{{ instance }}"
     register: ec2_output
   
   - name:
     debug:
-      msg: " {{ ec2_output }} "
+      msg: "{{ ec2_output }}"
