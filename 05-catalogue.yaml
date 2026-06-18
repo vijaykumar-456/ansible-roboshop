@@ -65,7 +65,6 @@
     systemd_service:
       name: catalogue
       daemon_reload: true
-    when: unit_file.change
   - name: enable and start the service
     service: 
       name: catalogue
