@@ -2,3 +2,4 @@ ansible_user: ec2-user
 ansible_password: DevOps321
 MONGODB_HOST: mongodb.learndevopskills.shop
 REDIS_HOST: redis.learndevopskills.shop
+CATALOGUE_HOST: catalogue.learndevopskills.shop

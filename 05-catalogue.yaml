@@ -61,7 +61,7 @@
     when: catalogue_output.stdout | int < 0
     tags: 
     - mongodb
-  - name: daemon reload
+  - name: deamon reload
     systemd_service:
       name: catalogue
       daemon_reload: true
