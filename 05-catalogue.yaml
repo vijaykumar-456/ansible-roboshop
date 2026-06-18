@@ -2,3 +2,16 @@
   hosts: catalogue
   become: yes
   tasks: 
+  - name: enable nodejs
+    command: dnf module enable nodejs -y
+  - name: install nodejs
+    package:
+      name: nodejs
+      state: present
+  - name: create roboshop system user
+    user:
+    name: roboshop
+    system: true
+    home: s
+    shell: /sbin/nologin
+    comment: "Roboshop system user"
