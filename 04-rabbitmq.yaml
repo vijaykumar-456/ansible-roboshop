@@ -1,5 +1,5 @@
-- name: configuring mysql
-  hosts: mysql
+- name: configuring rabbitmq
+  hosts: rabbitmq
   become: yes
   tasks: 
   - name: copy rabbitmq repo
