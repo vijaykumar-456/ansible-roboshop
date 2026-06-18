@@ -61,6 +61,6 @@
     when: catalogue_output.stdout < 0
     tags: 
     - mongodb
-  - name: start the service
-    service: 
+  # - name: start the service
+  #   service: 
       
