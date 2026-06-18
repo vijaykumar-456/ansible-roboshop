@@ -14,7 +14,7 @@
       regexp: '127.0.0.1'
       replace: '0.0.0.0'
   - name: change protected module
-    ansible.builtin.lineinfile::
+    ansible.builtin.lineinfile:
       path: /etc/redis/redis.conf
       regexp: 'protected-mode'
       line: protected-mode no
