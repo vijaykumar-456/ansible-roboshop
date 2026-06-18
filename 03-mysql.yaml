@@ -1,0 +1,16 @@
+- name: configuring mysql
+  hosts: mysql
+  become: yes
+  tasks:
+  - name: install mysql server
+    package:
+      name: mysql-server
+      state: present
+  - name: enable and start the server
+    service:
+      name: mysqld
+      state: started
+      enabled: yes
+  - name: add system user and root ansible_password
+    command: mysql_secure_installation --set-root-pass RoboShop@1
+
