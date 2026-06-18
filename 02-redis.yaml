@@ -14,10 +14,10 @@
       regexp: '127.0.0.1'
       replace: '0.0.0.0'
   - name: change protected module
-    lineinfile:
+    ansible.builtin.lineinfile::
       path: /etc/redis/redis.conf
       regexp: 'protected-mode'
-      replace: 'protected-mode no'
+      line: 'protected-mode no'
   - name: enable and start the server
     service:
       name: redis
