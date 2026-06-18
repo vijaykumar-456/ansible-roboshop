@@ -3,7 +3,7 @@
   become: yes
   tasks: 
   - name: enable nodejs
-    command: dnf module enable nodejs -y
+    command: dnf module enable nodejs:20 -y
   - name: install nodejs
     package:
       name: nodejs
@@ -15,3 +15,15 @@
       home: s
       shell: /sbin/nologin
       comment: "Roboshop system user"
+  # - name: Remove directory
+  #   file:
+  #     path: /app
+  #     state: absent
+  # - name: delete catalogue.zip in thmp directory
+  #   file:
+  #     path: /tmp/catalogue.zip
+  #     state: absent
+  # - name: create app directory
+  #   file:
+  #     path: /app
+  #     state: directory
