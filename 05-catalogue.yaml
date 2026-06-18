@@ -10,8 +10,8 @@
       state: present
   - name: create roboshop system user
     user:
-    name: roboshop
-    system: true
-    home: s
-    shell: /sbin/nologin
-    comment: "Roboshop system user"
+      name: roboshop
+      system: true
+      home: s
+      shell: /sbin/nologin
+      comment: "Roboshop system user"
