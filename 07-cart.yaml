@@ -43,24 +43,6 @@
     template:
       src: cart.service.j2
       dest: /etc/systemd/system/cart.service
-  - name: copy mongo repo
-    copy:
-      src: mongo.repo
-      dest: /etc/yum.repos.d/mongo.repo
-  - name: install mongodb client
-    package:
-      name: mongodb-mongosh
-      state: present
-  - name: check cart schema exist ot not
-    shell: mongosh --host "{{ MONGODB_HOST }}" --eval 'db.getMongo().getDBNames().indexOf("cart")'
-    register: cart_output
-    tags:
-    - mongodb
-  - name: load the products
-    shell: mongosh --host "{{ MONGODB_HOST }}" </app/db/master-data.js
-    when: cart_output.stdout | int < 0
-    tags: 
-    - mongodb
   - name: deamon reload
     systemd_service:
       name: cart
