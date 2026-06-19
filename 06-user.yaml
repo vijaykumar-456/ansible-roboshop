@@ -43,10 +43,7 @@
       dest: /etc/systemd/system/user.service
   - name: enable and start the service
     service: 
-      name: catalogue
+      name: user
       state: restarted
       enabled: yes
-
-
-
 
