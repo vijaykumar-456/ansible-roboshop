@@ -35,7 +35,7 @@
       state: absent
   - name: copy ninx conf
     template:
-      src: nginx.servicej2
+      src: nginx.service.j2
       dest: /etc/nginx/nginx.conf
   - name: enable and start the service
     service: 
