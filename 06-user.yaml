@@ -28,8 +28,9 @@
       path: /app
       state: directory
   - name: download user
-    get_url: https://roboshop-artifacts.s3.amazonaws.com/user-v3.zip
-    dest: /tmp/user.zip
+    get_url: 
+      url: https://roboshop-artifacts.s3.amazonaws.com/user-v3.zip
+      dest: /tmp/user.zip
   - name: unzip user
     unarchive:
       src: /tmp/user.zip
