@@ -41,7 +41,7 @@
       path: /app
   - name: copy template module
     template:
-      src: uses.service.j2
+      src: users.service.j2
       dest: /etc/systemd/system/user.service
   - name: deamon reload
     systemd_service:
