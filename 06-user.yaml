@@ -5,8 +5,9 @@
   - name: enable nodejs 
     command: dnf module enable nodejs:20 -y
   - name: install nodejs
-    package: nodejs
-    state: present
+    package: 
+      name: nodejs
+      state: present
   - name: create roboshop user
     user:
       name: roboshop
