@@ -5,8 +5,9 @@
   - name: enable nginx:1.24
     command: dnf module enable nginx:1.24 -y 
   - name: install enginx
-    package: nginx
-    state: present
+    package: 
+      name: nginx
+      state: present
   - name: remove html directory
     file:
       path: /usr/share/nginx/html/
