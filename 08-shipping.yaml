@@ -54,7 +54,7 @@
       name: PyMySQL
       executable: pip3.9
   - name: load the mysql data
-    ansible.mysql.mysql_db:
+    community.mysql.mysql_db:
       state: import
       name: all
       login_user: root
