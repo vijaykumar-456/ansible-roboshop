@@ -18,7 +18,7 @@
       state: absent
   - name: create app directory
     file:
-      path: /app
+      path: /usr/share/nginx/html/
       state: directory
   - name: download payment
     get_url:
